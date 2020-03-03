@@ -1,0 +1,18 @@
+<% @articles.each do |article| %>
+  <div class="article">
+    <div class="actions">
+      <div class="destroy">
+        <%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe,
+          article_path(article),
+          method: :delete,
+          data: { confirm: "You'r about to delete #{article.title}" }
+        %>
+      </div>
+      <div class="edit">
+        <%= link_to '<i class="fas fa-edit"></i>'.html_safe, edit_article_path(article) %>
+      </div>
+    </div>
+    <div class="title"><%= link_to article.title, article_path(article) %></div>
+    <div class="content"><%= article.content %></div>
+  </div>
+<% end %>

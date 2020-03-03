@@ -7,9 +7,19 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
   </head>
 
   <body>
-    <%= yield %>
+    <div class="banner">
+      <h1>OPEN WIKI SYSTEM</h1>
+      <div class="add_article">
+        <%= link_to '<i class="fas fa-plus-square"></i> New Article'.html_safe, new_article_path %>
+      </div>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
